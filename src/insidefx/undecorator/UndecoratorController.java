@@ -331,8 +331,7 @@ public class UndecoratorController {
     void setStageY(Stage stage, double y) {
         try {
             ObservableList<Screen> screensForRectangle = Screen.getScreensForRectangle(stage.getX(), stage.getY(), stage.getWidth(), stage.getHeight());
-            if (screensForRectangle.size() > 0) {
-                Screen screen = screensForRectangle.get(0);
+            for (Screen screen : screensForRectangle) {
                 Rectangle2D visualBounds = screen.getVisualBounds();
                 if (y < visualBounds.getHeight() - 30 && y + SHADOW_WIDTH >= visualBounds.getMinY()) {
                     stage.setY(y);
