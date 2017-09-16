@@ -709,9 +709,9 @@ public class Undecorator extends StackPane {
                 }
             });
         }
-        // Transfer stage title to undecorator tiltle label
-
-        title.setText(stage.getTitle());
+        
+        // Bind stage title to undecorator title.
+        title.textProperty().bind(stage.titleProperty());
     }
 
     public void switchFullscreen() {
